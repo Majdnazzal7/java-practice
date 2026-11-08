@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "java",
+			"path": "../../../.."
+		},
+		{
+			"name": "demo",
+			"path": "../../../../../../Downloads/demo"
+		}
+	],
+	"settings": {}
+}
