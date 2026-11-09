@@ -1,4 +1,0 @@
-.DS_Store
-.idea/
-Test/git add .gitignore
-git commit --amend --no-edit
