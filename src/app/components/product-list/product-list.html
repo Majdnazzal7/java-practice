@@ -1,0 +1,50 @@
+
+<h2>Product Manager</h2>
+
+<!-- Add / Edit Product Form -->
+<div>
+  <h3>Product Form</h3>
+
+  <input
+    type="text"
+    placeholder="Product Name"
+    [(ngModel)]="productName"
+  />
+
+  <input
+    type="number"
+    placeholder="Product Price"
+    [(ngModel)]="productPrice"
+  />
+
+  @if (editingProductId === null) {
+    <button (click)="addProduct()">
+      Add Product
+    </button>
+  } @else {
+    <button (click)="saveProduct()">
+      Save Changes
+    </button>
+  }
+</div>
+
+<hr />
+
+<!-- Products List -->
+<h3>Products List</h3>
+
+@for (product of products; track product.id) {
+  <div>
+    <h4>{{ product.name }}</h4>
+
+    <p>Price: {{ product.price }}</p>
+
+    <button (click)="editProduct(product)">
+      Edit
+    </button>
+
+    <button (click)="deleteProduct(product.id)">
+      Delete
+    </button>
+  </div>
+}
