@@ -1,0 +1,87 @@
+
+.dashboard {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard > h1 {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 30px;
+}
+
+.student-form {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 35px;
+}
+
+.student-form h2,
+.students-container h2 {
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.student-form input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  color: white;
+  margin: 5px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.add-btn {
+  background: #2563eb;
+}
+
+.update-btn {
+  background: #16a34a;
+}
+
+.cancel-btn {
+  background: #64748b;
+}
+
+.edit-btn {
+  background: #d97706;
+}
+
+.delete-btn {
+  background: #dc2626;
+}
+
+.student-item {
+  margin-bottom: 20px;
+}
+
+.actions {
+  text-align: right;
+  margin-top: -5px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #64748b;
+  padding: 20px;
+}

@@ -1,0 +1,98 @@
+
+<section class="dashboard">
+
+  <h1>Student Dashboard</h1>
+
+  <!-- Add / Edit Student Form -->
+  <div class="student-form">
+
+    <h2>
+      {{ editingId === null ? 'Add New Student' : 'Edit Student' }}
+    </h2>
+
+    <input
+      type="text"
+      placeholder="Student Name"
+      [(ngModel)]="newStudent.name"
+    />
+
+    <input
+      type="number"
+      placeholder="Student Age"
+      [(ngModel)]="newStudent.age"
+    />
+
+    <input
+      type="email"
+      placeholder="Student Email"
+      [(ngModel)]="newStudent.email"
+    />
+
+    <input
+      type="text"
+      placeholder="Student Grade"
+      [(ngModel)]="newStudent.grade"
+    />
+
+    @if (editingId === null) {
+      <button
+        class="add-btn"
+        [disabled]="!newStudent.name || !newStudent.email || newStudent.age <= 0 || !newStudent.grade"
+        (click)="addStudent()"
+      >
+        Add Student
+      </button>
+    } @else {
+      <button
+        class="update-btn"
+        (click)="updateStudent()"
+      >
+        Update Student
+      </button>
+
+      <button
+        class="cancel-btn"
+        (click)="cancelEdit()"
+      >
+        Cancel
+      </button>
+    }
+
+  </div>
+
+  <!-- Students List -->
+  <div class="students-container">
+
+    <h2>Students ({{ students.length }})</h2>
+
+    @for (student of students; track student.id) {
+
+      <div class="student-item">
+
+        <app-student-card [student]="student"></app-student-card>
+
+        <div class="actions">
+          <button
+            class="edit-btn"
+            (click)="editStudent(student)"
+          >
+            Edit
+          </button>
+
+          <button
+            class="delete-btn"
+            (click)="deleteStudent(student.id)"
+          >
+            Delete
+          </button>
+        </div>
+
+      </div>
+
+    } @empty {
+      <p class="empty-message">No students found.</p>
+    }
+
+  </div>
+
+</section>
